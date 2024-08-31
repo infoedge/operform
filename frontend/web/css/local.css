@@ -1,0 +1,24 @@
+.show-lg{
+    font-size: 2rem;
+}
+
+.para-border{
+    border-style: solid;
+    border-color: lightgrey;
+    border-radius: 10px;
+    border-width: 2px;
+    margin:10px;
+}
+
+.bg-grey{
+    background-color: lightgray;
+}
+.books-default-index {
+    display: block;
+    min-height: 800px;
+}
+.social-links{
+    list-style-type: none;
+    display:inline;
+}
+

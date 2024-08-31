@@ -1,0 +1,18 @@
+.curved-border{
+    border-style: solid;
+    border-color: lightgrey;
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+.top-logo{
+    background-image: url("images/optimum-performance-logo-header.jpg");
+}
+
+.help-block{
+    color:#ff0000;
+}
+.social-links li{
+    display:inline;
+}
+
