@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //'id',
-            'ownerId',
+            'owner.FullMemberName',
             'adTitle',
             'adNarrative:ntext',
             'entranceAnticId',

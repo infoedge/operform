@@ -19,6 +19,7 @@ use Yii;
  */
 class AdCampaign extends \yii\db\ActiveRecord
 {
+    public $myStartDate;
     /**
      * {@inheritdoc}
      */
@@ -33,9 +34,9 @@ class AdCampaign extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['adId', 'adPayTypeId', 'startDate', 'requestedBy'], 'required'],
+            [['adId', 'adPayTypeId', 'startDate'], 'required'],
             [['adId', 'adPayTypeId', 'requestedBy'], 'integer'],
-            [['startDate'], 'safe'],
+            [['startDate','myStartDate'], 'safe'],
             [['adId'], 'exist', 'skipOnError' => true, 'targetClass' => Advert::class, 'targetAttribute' => ['adId' => 'id']],
             [['adPayTypeId'], 'exist', 'skipOnError' => true, 'targetClass' => AdPayType::class, 'targetAttribute' => ['adPayTypeId' => 'id']],
             [['requestedBy'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['requestedBy' => 'id']],
@@ -49,9 +50,10 @@ class AdCampaign extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'adId' => Yii::t('app', 'Ad ID'),
-            'adPayTypeId' => Yii::t('app', 'Ad Pay Type ID'),
+            'adId' => Yii::t('app', 'Advert Name'),
+            'adPayTypeId' => Yii::t('app', 'Advert Pay Type'),
             'startDate' => Yii::t('app', 'Start Date'),
+            'myStartDate' => Yii::t('app', 'Advert Start Date'),
             'requestedBy' => Yii::t('app', 'Requested By'),
         ];
     }

@@ -27,6 +27,9 @@ return [
         'purchasedetails'=>[
             'class'=>'common\components\PurchaseDetails',
         ],
+        'advertdisplay'=>[
+            'class'=>'common\components\AdvertDisplay',
+        ],
     ],
     'modules' => [
         'pdfjs' => [

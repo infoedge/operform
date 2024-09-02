@@ -5,12 +5,13 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\modules\adverts\models\AdPayType $model */
 
-$this->title = Yii::t('app', 'Update Ad Pay Type: {name}', [
-    'name' => $model->id,
+$this->title = Yii::t('app', 'Edit Ad Pay Type: {name}', [
+    'name' => $model->adPayTypeName,
 ]);
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Adverts'), 'url' => ['default/index']];
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Ad Pay Types'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+//$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = Yii::t('app', 'Edit');
 ?>
 <div class="ad-pay-type-update">
 

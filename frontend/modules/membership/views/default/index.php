@@ -62,7 +62,7 @@ MyDashboardAssets::register($this);
             <?= Yii::$app->articledisplay->featuredArticles(); ?>
         </div><!-- comment -->
         <div class="col-md-2 advert-rgt curved-border">
-            .
+            .<?php echo(Yii::$app->advertdisplay->displayAdverts(3)); ?>
         </div>
     </div>
     <br/>

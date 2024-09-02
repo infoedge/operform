@@ -144,4 +144,9 @@ class Advert extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::class, ['id' => 'updatedBy']);
     }
+    
+    public function getFullAdvertName()
+    {
+        return $this->adTitle.': '.$this->adNarrative;
+    }
 }

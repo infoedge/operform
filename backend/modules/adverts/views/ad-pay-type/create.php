@@ -5,7 +5,8 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\modules\adverts\models\AdPayType $model */
 
-$this->title = Yii::t('app', 'Create Ad Pay Type');
+$this->title = Yii::t('app', 'Add Advert Pay Type');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Adverts'), 'url' => ['default/index']];
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Ad Pay Types'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

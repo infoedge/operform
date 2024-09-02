@@ -11,6 +11,7 @@ use yii\widgets\Pjax;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = Yii::t('app', 'Ad Campaigns');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Adverts'), 'url' => ['default/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ad-campaign-index">
@@ -30,16 +31,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'adId',
-            'adPayTypeId',
+            //'id',
+            'ad.FullAdvertName',
+            'adPayType.adPayTypeName',
             'startDate',
             'requestedBy',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, AdCampaign $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                 },
+                 'template'=>'{update}',
             ],
         ],
     ]); ?>
