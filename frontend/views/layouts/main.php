@@ -149,7 +149,7 @@ AppAsset::register($this);
     }
     ?>       
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-2">
     <?php
     if (Yii::$app->user->isGuest) {
         echo Html::tag('div',Html::a('Login',['/site/login'],['class' => ['btn btn-link login text-decoration-none']]),['class' => ['d-flex']]);

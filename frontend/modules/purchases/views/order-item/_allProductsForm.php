@@ -15,12 +15,12 @@ use yii\widgets\ActiveForm;
 <?php foreach($models as $i=>$model){  ?>  
 <div class="row">
     
-    <div class="col-md-3"><?= $form->field($model, '[$i]priceListId')->checkbox(['style'=>'display:inline'])->label($model->priceList->product->productName) ?></div>
+    <div class="col-md-3"><?= '<br/><strong>'.$model->priceList->product->productName .'</strong>' ?></div>
 
-    <div class="col-md-1"><?= $form->field($model, '[$i]quantity')->dropDownList([1=>'1',2=>'2',3=>'3',4=>'4',6=>'6']) ?></div>
+    <div class="col-md-1"><?= $form->field($model, '[$i]quantity')->dropDownList([0=>'0',1=>'1',2=>'2',3=>'3',4=>'4',6=>'6'],['prompt'=>'..Pick a Number..','id'=>'qty'.$i]) ?></div>
     <div class="col-sm-2"><?= 'Price</br>($ US)</br>'.$model->productPrice ?></div>
     
-    <div class="col-md-2"><?= $form->field($model, '[$i]totalAmt')->textInput() ?></div>
+    <div class="col-md-2"><?= $form->field($model, '[$i]totalAmt')->textInput(['id'=>'totalAmt-'.$i]) ?></div>
 
     <div class="col-md-2"><?= $form->field($model, '[$i]requiresDelivery')->radioList([0=>'No',1=>'Yes']) ?></div>
     

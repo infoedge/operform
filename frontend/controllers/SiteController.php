@@ -74,8 +74,18 @@ class SiteController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    {
+    {       
+        if(!empty(Yii::$app->useful->extractSysConstant("underConstruction"))){
+                        
+            $this->redirect(['maintenance/under-construction']);
+        }
         return $this->render('index');
+    }
+    
+    public function actionUnderConstruction()
+    {
+
+        return $this->render('underConstruction');
     }
 
     /**

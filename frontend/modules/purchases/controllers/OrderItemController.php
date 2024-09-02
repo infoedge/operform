@@ -93,7 +93,7 @@ class OrderItemController extends Controller
             $models[$i] = new OrderItem();
             $models[$i]->priceListId=$item["priceListId"];
             $models[$i]->productPrice = $item["price"];
-            $models[$i]->quantity=($item["priceListId"]==$priceListId)?1:0;
+            $models[$i]->quantity=($item["priceListId"]==$priceListId?1:0);
             $models[$i]->totalAmt= $models[$i]->productPrice * $models[$i]->quantity;
         }
         if ($this->request->isPost) {
@@ -171,7 +171,7 @@ class OrderItemController extends Controller
                 ->where(['>','price',0])
                 ->andWhere(['<','startDate',$curdate])
                 ->andWhere(['OR',['endDate'=>null],['>','endDate',$curdate]])
-                ->orderBy('i.productTypeId')
+                ->orderBy('productTypeId')
                 ->all();
     }
     
